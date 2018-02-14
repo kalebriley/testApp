@@ -17,8 +17,8 @@ class ViewController: UIViewController {
         Network.shared.request(target: UserTarget.users) { result in
             switch result {
             case .success(let json):
-                let localUser: [User] = User.UsersFrom(json: json)
-                print(localUser)
+                let users: [User] = User.UsersFrom(json: json)
+                print(users)
             case .failure(let error):
                 print(error)
             }
