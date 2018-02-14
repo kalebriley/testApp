@@ -14,7 +14,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        Network.shared.request(target: UserTarget.getUser) { result in
+        Network.shared.request(target: UserTarget.users) { result in
             switch result {
             case .success(let json):
                 let localUser: [User] = User.UsersFrom(json: json)
